@@ -1,0 +1,36 @@
+<div id="nav">
+    <img src="images/logo2.png">
+    <div class="nav">
+        <ul>
+            <li><a href="/userIndex">Home</a></li>
+            <li><a href="/myblog">My Blog</a></li>
+            <li><a href="/">Log Out</a></li>
+        </ul>
+    </div>
+    <div id="potrait">
+        <img src="images/potrait.png">
+        <span>Hello, {{logeduser}}</span>
+        <button ng-click="newpost()" id="newpostbtn">+</button>
+    </div>
+
+</div>
+<div id="blogsContainer">
+    <p ng-if="cond == '1'" id="noblog">Everybody must be in the Mars...</p>
+    <div id="blog" ng-repeat="blog in blogs.slice().reverse() | orderBy: order track by blog.date" >
+        <div id="blogupper">
+            <button ng-if="blog.author == logeduser" ng-click="editPost(blog._id)" id="edit">E</button>
+            <button ng-if="blog.author == logeduser" ng-click="deletePost(blog._id)" id="del">X</button>
+            <h3>{{blog.author}}</h3>
+        </div>
+        <div id="blogmid">
+            <a href="/detail/{{blog._id}}"><h2>{{blog.title}}</h2></a>
+            <h4>{{blog.date}}</h4>
+            <P id="pa">{{blog.body}})</p>
+        </div>
+        <div id="blogbot">
+            <a href="/detail/{{blog._id}}"><p>Read All ></p></a>
+
+        </div>
+    </div>
+</div>
+

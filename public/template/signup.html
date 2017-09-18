@@ -1,0 +1,41 @@
+<div id="nav">
+    <img src="images/logo2.png">
+</div>
+<h1>Sign Up</h1>
+<div id="button">
+    <p>Already have a Game Box account? <a href="/">Log In</a></p>
+</div>
+<div id = "registerForm">
+    <div id="outline">
+        <div class="select">
+            <img src="images/select3.png">
+            <input ng-model="post.select" type="radio" name="sex" value="user" />
+            <input ng-model="post.select" type="radio" name="sex" value="admin" />
+        </div>
+        <div class="speical">
+            <div id="nrepeat" class="nrepeat_dis">Already Taken</div>
+            <h2>User Name</h2>
+            <input ng-model="post.user" type="text" value="(username)" onfocus="if (value =='(username)'){value =''}" onblur=" if (value ==''){value='(username)'}" name="username" />
+        </div>
+        <div class="un">
+            <div id="prepeat" class="prepeat_dis">Already Taken</div>
+            <h2>Phone</h2>
+            <input ng-model="post.phone" type="text" value="(13900000000)" onfocus="if (value =='(13900000000)'){value =''}" onblur=" if (value ==''){value='(13900000000)'}" name="phone">
+        </div>
+        <div class="un">
+            <div id="erepeat" class="erepeat_dis">Already Taken</div>
+            <h2>E-Mail</h2>
+            <input ng-model="post.email" type="text" value="(name@example.com)" onfocus="if (value =='(name@example.com)'){value =''}" onblur=" if (value ==''){value='(name@example.com)'}" name="email">
+        </div>
+        <div class="un">
+            <h2>Password</h2>
+            <input ng-model="post.pass" type="password" name="pass" />
+        </div>
+        <button ng-click="register(post)" id="button2">Sign Up</button>
+    </div>
+    <p id="sc" ng-if="cond=='1'">Please input all blanks.</p>
+    <p id="sc" ng-if="cond=='2'">Username already taken.</p>
+</div>
+<div id="info">
+    <p>* By signing up, you agree to our <a href="">Terms of Use</a>, <a href="">Privacy Policy</a> and to receive Game Box emails, newsletters & updates.</p>
+</div>

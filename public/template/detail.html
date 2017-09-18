@@ -1,0 +1,29 @@
+<div id="nav">
+    <img src="images/logo2.png">
+    <div class="nav">
+        <ul>
+            <li><a href="/userIndex">Home</a></li>
+            <li><a href="/myblog">My Blog</a></li>
+            <li><a href="/">Log Out</a></li>
+        </ul>
+    </div>
+    <div id="potrait">
+        <img src="images/potrait.png">
+        <span>Hello, {{logeduser}}</span>
+        <button ng-click="newpost()" id="newpostbtn">+</button>
+    </div>
+
+</div>
+<div id="newpost">
+    <div ng-model="post.title" id="blogviewtitle" placeholder="Blog Title" >{{posts.title}}</div>
+    <div ng-model="post.body" id="blogviewbody" placeholder="Start from here"><span id="name"><h3>{{posts.date}}</h3>{{posts.author}} </span>{{posts.body}}</div>
+    <div id="comment">
+        <h2 id="like">15 Likes</h2>
+        <ul>
+            <li ng-repeat="comment in comments"><span id="name">{{comment.author}} </span>{{comment.body}}<button ng-click="delcomment(comment.body)" ng-if="comment.author == logeduser" id="delcomment">·</button> <button id="blockcomment" ng-click="blockcomment(comment.body)" ng-if="type == 'admin'" id="delcomment">-</button></li>
+        </ul>
+        <button ng-click="createComment(comment)" id="sendComment">></button>
+    </div>
+    <input ng-model="comment.comment" id="commentInput" type="text" placeholder="Add your comment..." />
+    <div id="block"><button ng-click="blockblog()" ng-if="type=='admin'" class="blockpost2">Block</button><button ng-if="posts.author == logeduser" ng-click="edit()" class="blockpost" id="epost">Edit</button><button ng-if="posts.author == logeduser" ng-click="delete()" class="blockpost" id="dpost">Delete</button></div>
+</div>

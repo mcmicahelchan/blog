@@ -1,0 +1,21 @@
+<div id="nav">
+    <img src="images/logo2.png">
+    <div class="nav">
+        <ul>
+            <li><a href="/userIndex">Home</a></li>
+            <li><a href="/myblog">My Blog</a></li>
+            <li><a href="/">Log Out</a></li>
+        </ul>
+    </div>
+    <div id="potrait">
+        <img src="images/potrait.png">
+        <span>Hello, {{logeduser}}</span>
+        <button ng-click="newpost()" id="newpostbtn">+</button>
+    </div>
+
+</div>
+<div id="newpost">
+    <input ng-model="post.title" id="blogtitle" placeholder="Blog Title" />
+    <textarea ng-model="post.body" id="blogbody" placeholder="Start from here"></textarea><br>
+    <button id="blogbtn" ng-click="blogpost(post)">√</button>
+</div>

@@ -1,0 +1,25 @@
+<div id="nav">
+    <img src="images/logo2.png">
+</div>
+<h1>Log In</h1>
+<div id="button">
+    <p>New to Puzzle? <a href="/signup">Sign Up</a></p>
+</div>
+<div id = "registerForm">
+    <div id="outline">
+        <div class="un">
+
+            <h2>User Name</h2>
+            <input ng-model="post.user" type="text" name="username" />
+        </div>
+
+        <div class="un">
+            <h2>Password</h2>
+            <input ng-model="post.pass" type="password" name="password">
+        </div>
+
+        <button ng-click="login(post)" id="button2">Log In</button>
+        <p ng-if="cond=='1'">Wrong user name or password.</p>
+
+    </div>
+</div>
